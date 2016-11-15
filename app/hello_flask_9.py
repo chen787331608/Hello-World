@@ -17,4 +17,4 @@ def user(name):
     return render_template('user.html', name=name)
 
 if __name__ == '__main__':
-    app.run(host="192.168.1.115", port=8889, debug=True)
+    app.run(host="0.0.0.0", port=8889, debug=True)

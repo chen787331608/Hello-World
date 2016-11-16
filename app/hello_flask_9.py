@@ -1,20 +1,7 @@
 #!/usr/bin/python
 # Filename:hello_flask.py
 
-from flask import Flask, render_template
-from flask.ext.bootstrap import Bootstrap
-app = Flask(__name__)
-bootstrap = Bootstrap(app)
-
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-
-@app.route('/user/<name>')
-def user(name):
-    return render_template('user.html', name=name)
+import hello_flask
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8889, debug=True)
+    hello_flask.app.run(host="0.0.0.0", port=8889, debug=True)

@@ -3,5 +3,8 @@
 {% block page_content %}
 <div class="page-header">
     <h1>你好, {{ name }}!</h1>
+	{% if name=="龙哥" %}
+	<img src="{{ url_for('static', filename='img/watchdogs.jpg', _external=True) }}" >
+	{% endif %}
 </div>
 {% endblock %}

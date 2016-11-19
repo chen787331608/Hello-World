@@ -7,6 +7,11 @@ from flask.ext.bootstrap import Bootstrap
 from flask.ext.wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
+import sys
+
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 class NameForm(Form):

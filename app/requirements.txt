@@ -1,0 +1,6 @@
+Flask
+Flask-Admin
+Flask-SQLAlchemy
+Flask-Bootstrap
+Flask-wtf
+Flask-Security>=1.7.5

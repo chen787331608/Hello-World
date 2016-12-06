@@ -14,7 +14,7 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
-class NameForm(Form):
+class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[Required()])
     submit = SubmitField(u'提交')
 

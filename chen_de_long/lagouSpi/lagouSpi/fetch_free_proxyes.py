@@ -84,10 +84,10 @@ def fetch_xici():
         for i in range(1, len(trs)):
             tr = trs[i]
             tds = tr.find_all("td")
-            ip = tds[2].text
-            port = tds[3].text
-            speed = tds[7].div["title"][:-1]
-            latency = tds[8].div["title"][:-1]
+            ip = tds[1].text
+            port = tds[2].text
+            speed = tds[6].div["title"][:-1]
+            latency = tds[7].div["title"][:-1]
             if float(speed) < 3 and float(latency) < 1:
                 proxyes.append("%s:%s" % (ip, port))
     except:
@@ -173,9 +173,9 @@ def check(proxy):
 
 def fetch_all(endpage=2):
     proxyes = []
-    for i in range(1, endpage):
-        proxyes += fetch_kxdaili(i)
-    proxyes += fetch_mimvp()
+#   for i in range(1, endpage):
+#       proxyes += fetch_kxdaili(i)
+#   proxyes += fetch_mimvp()
     proxyes += fetch_xici()
     proxyes += fetch_ip181()
     proxyes += fetch_httpdaili()

@@ -15,7 +15,7 @@ class DmozSpider(scrapy.Spider):
     num = 0
 
     def start_requests(self):
-        while self.num < 4000:
+        while self.num < 1900:
             self.num += 1
             yield scrapy.Request(self.base_url+str(self.num),
                                  headers=self.headers,
@@ -30,7 +30,8 @@ class DmozSpider(scrapy.Spider):
             abstract = re.search(r'<p[\s\S]+?</p>', i).group(0)
             abstract = abstract[27:-9]
 #           print 'author:', author, 'title:', title, 'abs:', abstract
-            strP = 'author:' + author + '\ntitle:' + title + '\nabs:' + abstract
-            open('res.txt', 'a+').write(strP+'\n')
+            if title.find('scrapy')!=-1 or title.find('爬虫')!=-1:
+                strP = 'author:' + author + '\ntitle:' + title + '\nabs:' + abstract
+                open('res.txt', 'a+').write(strP+'\n')
         # from scrapy.shell import inspect_response
         # inspect_response(response, self)

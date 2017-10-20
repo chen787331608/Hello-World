@@ -1,0 +1,15 @@
+{
+  "inbound": {
+    "port": 1024, // 监听端口
+    "protocol": "shadowsocks",
+    "settings": {
+      "method": "aes-256-cfb",
+      "ota": true, // 是否开启 OTA，建议开启
+      "password": "sspasswd"
+    }
+  },
+  "outbound": {
+    "protocol": "freedom",  
+    "settings": {}
+  }
+}
